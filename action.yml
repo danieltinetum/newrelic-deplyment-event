@@ -1,0 +1,12 @@
+name: 'Deployment Event Registry'
+description: 'Registry time elapsed from push to aplication deplayment'
+inputs:
+  account-id:  # NewRelic Accoun ID
+    description: 'From one.newrelic.com, use the account selector dropdown near the top of the page to switch between accounts and see their IDs.'
+    required: true
+outputs:
+  time: # id of output
+    description: 'The time we greeted you'
+runs:
+  using: 'node16'
+  main: 'index.js'

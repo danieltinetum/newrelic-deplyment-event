@@ -1,0 +1,25 @@
+{
+  "name": "newrelic-deplyment-event",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danieltinetum/newrelic-deplyment-event.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danieltinetum/newrelic-deplyment-event/issues"
+  },
+  "homepage": "https://github.com/danieltinetum/newrelic-deplyment-event#readme",
+  "dependencies": {
+    "@actions/core": "^1.9.0",
+    "@actions/github": "^5.0.3",
+    "axios": "^0.27.2"
+  }
+}
