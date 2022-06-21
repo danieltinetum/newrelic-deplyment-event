@@ -4,6 +4,12 @@ inputs:
   account-id:  # NewRelic Accoun ID
     description: 'From one.newrelic.com, use the account selector dropdown near the top of the page to switch between accounts and see their IDs.'
     required: true
+  api-key:
+    description: 'You can view and manage most API keys from the API keys UI page, which is at one.newrelic.com/launcher/api-keys-ui.api-keys-launcher (from the account dropdown, click API keys).'
+    required: true
+  application-name: # Application Name
+    description: 'Name of the application as it is known in the organization, do not use the repository name.'
+    required: true
 outputs:
   time: # id of output
     description: 'The time we greeted you'
