@@ -11,6 +11,11 @@ try {
         const payload = context.payload;
 
         console.log( JSON.stringify(payload.head_commit, null, 2) )
+
+        const commited_at = payload.head_commit.timestamp
+
+        console.log('1.-',commited_at )
+        console.log('2.-', new Date(commited_at).getTime())
         
         core.setOutput("time", 10000 );
 
