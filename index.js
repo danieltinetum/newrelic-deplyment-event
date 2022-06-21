@@ -6,10 +6,11 @@ const axios = require('axios');
     const time = (new Date()).getTime()
     const account_id = core.getInput('account-id');
     const api_key = core.getInput('api-key')
+    const application_name = core.getInput('application-name')
     
-    var config = {
+    const config = {
         method: 'get',
-        url: 'https://api.newrelic.com/v2/applications.json?filter[name]=sb',
+        url: `https://api.newrelic.com/v2/applications.json?filter[name]=${application_name}`,
         headers: { 
           'X-Api-Key': api_key
         }
