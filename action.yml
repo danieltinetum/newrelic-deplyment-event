@@ -4,6 +4,9 @@ inputs:
   account-id:  # NewRelic Accoun ID
     description: 'From one.newrelic.com, use the account selector dropdown near the top of the page to switch between accounts and see their IDs.'
     required: true
+  insights-insert-key: # New Relic Insights Insert Key
+    description: ''
+    required: true
   api-key:
     description: 'You can view and manage most API keys from the API keys UI page, which is at one.newrelic.com/launcher/api-keys-ui.api-keys-launcher (from the account dropdown, click API keys).'
     required: true
