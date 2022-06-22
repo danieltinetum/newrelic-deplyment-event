@@ -8,9 +8,12 @@ try {
         const api_key = core.getInput('api-key')
         const application_name = core.getInput('application-name')
         const context = github.context;
-        const payload = context.payload;
+        //const payload = context.payload;
 
-        //console.log( JSON.stringify(payload.head_commit, null, 2) );
+        
+        const { payload, ...resto } = github.context
+
+        console.log( resto );
 
         const deployed_at = new Date().getTime();
         const commited_at = new Date(payload.head_commit.timestamp).getTime();
@@ -43,18 +46,18 @@ try {
                 "appId": application_id,
                 "appName": nr_app_name,
                 "revision": "0000010",
-                "environment": "DEV",
+                "environment": "PRD",
                 "type": "regular",
                 "jobName": context.job,
                 "buildNumber": context.runNumber,
-                "branchName": "qa",
+                "branchName": "MAASTER",
                 "commit": payload.id,
                 "codeCommittedTime": commited_at,
                 "codeDeployedTime": deployed_at,
                 "buildStatus": "SUCESSFULL"
               });
               
-              console.log(JSON.stringify(registry, null, 2))
+              
         })
         .catch(error => {
             core.setFailed(error.message);
