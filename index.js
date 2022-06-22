@@ -18,6 +18,10 @@ try {
 
         core.setOutput("time", Math.round(elapsed_time));
 
+        console.log('payload',payload)
+        console.log('context',context)
+        
+
         const search = {
             method: 'get',
             url: `https://api.newrelic.com/v2/applications.json?filter[name]=${application_name}`,
