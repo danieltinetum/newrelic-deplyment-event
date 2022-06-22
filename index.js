@@ -50,7 +50,8 @@ try {
                     "commit": payload.id,
                     "codeCommittedTime": commited_at,
                     "codeDeployedTime": deployed_at,
-                    "buildStatus": "SUCESSFULL"
+                    "buildStatus": "SUCESSFULL",
+                    "sendFrom": "GithubActions"
                 });
 
                 const config = {
