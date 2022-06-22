@@ -65,7 +65,7 @@ try {
 
                 axios(config)
                 .then(function (response) {
-                        console.log(response)
+                        console.log(response.data)
                 })
                 .catch(function (error) {
                     core.setFailed(error.message);
