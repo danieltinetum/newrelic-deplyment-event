@@ -7,13 +7,9 @@ try {
         const account_id = core.getInput('account-id');
         const api_key = core.getInput('api-key')
         const application_name = core.getInput('application-name')
-        const context = github.context;
-        //const payload = context.payload;
+        const { payload, ...context } = github.context
+        const branch_name = context.ref.substring( context.ref.lastIndexOf('/') + 1, context.ref.length )
 
-        
-        const { payload, ...resto } = github.context
-
-        console.log( resto );
 
         const deployed_at = new Date().getTime();
         const commited_at = new Date(payload.head_commit.timestamp).getTime();
@@ -45,18 +41,19 @@ try {
                 "eventType": "BelDeployment",
                 "appId": application_id,
                 "appName": nr_app_name,
-                "revision": "0000010",
-                "environment": "PRD",
+                "revision": context.runId,
+                "environment": ['main', 'master'].includes(branch_name) ? "PRD" : "QA",
                 "type": "regular",
                 "jobName": context.job,
                 "buildNumber": context.runNumber,
-                "branchName": "MAASTER",
+                "branchName": branch_name,
                 "commit": payload.id,
                 "codeCommittedTime": commited_at,
                 "codeDeployedTime": deployed_at,
                 "buildStatus": "SUCESSFULL"
               });
-              
+            
+              console.log(registry)
               
         })
         .catch(error => {
